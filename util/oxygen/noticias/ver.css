@@ -1,0 +1,5 @@
+﻿.divv {margin-bottom:20px;   /* se verá en todos los navegadores */
+      #margin-bottom:15px;  /* en todos los IE, se verá con 15px */
+      //margin-bottom:15px; /* este hack, es equivalente al anterior: todos los IE */
+      _margin-bottom:10px;  /* en todos los IE6, o inferior, se verá con 10px */
+}
