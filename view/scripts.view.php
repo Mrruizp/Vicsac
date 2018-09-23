@@ -60,7 +60,7 @@
 <script type="text/javascript" src="../util/oxygen/js/custom.js"></script>
 
 <!-- jQuery -->
-<script type="text/javascript" src="../util/oxygen/plugins/jquery.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script type="text/javascript" src="../util/oxygen/bootstrap/js/bootstrap.min.js"></script>

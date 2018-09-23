@@ -114,9 +114,9 @@ blockquote {
 
 /* Layout
 ----------------------------------------------------------------------------- */
-.header {
+.header { /* transparente */
 	color: #ffffff;
-	background-color: rgba(0, 0, 0, 0.10);
+	background-color: rgba(1, 1, 1, 1);
 	padding: 10px 0;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
@@ -142,7 +142,7 @@ blockquote {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.55);
+	 background-color: rgba(0, 0, 0, 0.55); 
 	content: "";
 }
 .banner-caption {
@@ -152,13 +152,13 @@ blockquote {
 	z-index: 2;
 }
 .subfooter {
-	background-color: #fafafa;
-	border-top: 1px solid #f3f3f3;
+	background-color: #fafafa; 
+	border-top: 1px solid #f3f3f3; 
 	border-bottom: 1px solid #f3f3f3;
-	padding: 40px 0;
+	padding: 40px 0; 
 }
 .section {
-	background-color: #ffffff;
+	background-color: #ffffff; 
 	padding: 80px 0;
 }
 

@@ -27,7 +27,9 @@
                             <!-- logo -->
                             <div class="logo smooth-scroll">
 
-                                <a href="#banner"><img id="logo" src="../util/oxygen/images/logo_1.png" alt="Vicsac"></a>
+                                <a href="#banner">
+                                    <img id="logo" class="img-responsive" src="../util/oxygen/images/logo_1.jpg" alt="Vicsac">
+                                </a>
                             </div>
 
                             <!-- name-and-slogan -->
@@ -38,8 +40,8 @@
                                     </a>
                                 </div>
                                 <div class="site-slogan">
-                                    Chiclayo - 
-                                    <a target="_blank" href="">
+                                    Lima - 
+                                    <a target="_blank" href="http://www.peru.gob.pe/">
                                         Perú
                                     </a>
                                 </div>
@@ -103,7 +105,7 @@
             <div class="banner-image"></div>
             <div class="banner-caption">
                 <div class="container">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
                             <h1 class="text-center">Bienvenidos a <span>VICSAC</span></h1>
                             <p class="lead text-center">Somos una organización 
@@ -111,10 +113,11 @@
                                 mediante un alineamiento entre el gobierno Municipal 
                                 y VICSAC. </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
+        
         <!-- banner end -->
 
         <!-- section start -->
@@ -224,7 +227,7 @@
                                     <br/>
                                     <h3 class="title text-left">Valores</h3>
                                     <p>
-
+                                        Eficiencia, transparencia, pasión, lealtad.
                                     </p>
 
                                 </div>
@@ -318,18 +321,22 @@
                                     aquí varias maneras de contactarnos cualquier 
                                     sea tu necesidad. Estamos a tu disposición.</p>
                                 <ul class="list-icons">
-                                    <li><i class="fa fa-fax pr-10"></i> 074 - 
-                                        261592</li>
+                                    <li><i class="fa fa-location-arrow pr-10"></i> 
+                                        Agustín Antonete #123. La victoria, Lima
+                                    </li>
+                                    <li><i class="fa fa-fax pr-10"></i> 
+                                        074 - 261592
+                                    </li>
                                     <li><i class="fa fa-phone pr-10"></i> 
-                                        979989840</li>
+                                        966958389 / 954584452</li>
                                     <li><i class="fa fa-envelope-o pr-10"></i>
                                         Vicsacperu@hotmail.com</li>
                                 </ul>
                                 <ul class="social-links">
-                                    <li class="facebook"><a target="_blank" href="https://web.facebook.com/VICSACPERU"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="twitter"><a target="_blank" href="https://twitter.com/VicsacPeru?lang=es"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                                    <li class="skype"><a target="_blank" href="https://web.skype.com/es/"><i class="fa fa-skype"></i></a></li>
+                                    <li class="facebook"><a target="_blank" href="https://web.facebook.com/VICSACPERU"><i class="fa fa-facebook-square"></i></a></li>
+                                    <li class="twitter"><a target="_blank" href="https://twitter.com/VicsacPeru"><i class="fa fa-twitter-square"></i></a></li>
+                                    <li class="instagram"><a target="_blank" href="https://www.instagram.com/vicsacperu/"><i class="fa fa-instagram"></i></a></li>
+                                    <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCDiQunCSji5ZGSkJOfaCSmw/featured"><i class="fa fa-youtube-square"></i></a></li>                                    
                                 </ul>
                             </div>
                         </div>
@@ -443,9 +450,15 @@
         <!-- footer end -->
         <!-- Scripts -->
         <?php require_once 'scripts.view.php'; ?>
+        <!-- Script to Activate the Carousel -->
+        <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+        </script>
         <!-- =============================================== -->
         <script src="js/mensajeContacto.js" type="text/javascript"></script>
-
+        
     </body>
 </html>
 
