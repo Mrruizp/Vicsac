@@ -68,67 +68,67 @@
 
 
 
-$("#frmgrabar").submit(function (event) {
+$("#frmgrabar").submit(function(event){
     event.preventDefault();
-
+    
     swal({
-        title: "Confirme",
-        text: "¿Esta seguro de grabar los datos ingresados?",
-        showCancelButton: true,
-        confirmButtonColor: '#3d9205',
-        confirmButtonText: 'Si',
-        cancelButtonText: "No",
-        closeOnConfirm: false,
-        closeOnCancel: true,
-        imageUrl: "../images/pregunta.png"
+            title: "Confirme",
+            text: "¿Esta seguro de grabar los datos ingresados?",
+            showCancelButton: true,
+            confirmButtonColor: '#3d9205',
+            confirmButtonText: 'Si',
+            cancelButtonText: "No",
+            closeOnConfirm: false,
+            closeOnCancel: true,
+            imageUrl: "../../images/pregunta.png"
     },
-            function (isConfirm) {
+    function(isConfirm){ 
 
-                if (isConfirm) { //el usuario hizo clic en el boton SI     
-                    //procedo a grabar
-                    //Llamar al controlador para grabar los datos
-
-                    //var codLab = ($("#txtTipoOperacion").val()==="agregar")? 
-
-                    var codUsuario = "";
-                    if ($("#txtTipoOperacion").val() === "agregar") {
-                        codUsuario = "0";
-                    } else {
-                        codUsuario = $("#txtCodigo").val();
-                    }
-
-                    $.post(
-                            "../controller/contacto.mensaje.agregar.editar.controller.php",
-                            {
-                                p_doc_ident: $("#txtDni").val(),
-                                p_nombres: $("#txtNombre").val(),
-                                p_apPaterno: $("#txtApPaterno").val(),
-                                p_apMaterno: $("#txtApMaterno").val(),
-                                p_email: $("#txtEmail").val(),
-                                p_telefono: $("#txtTelefono").val(),
-                                p_mensaje: $("#txtMensaje").val(),
-                                p_tipo_ope: $("#txtTipoOperacion").val(),
-                                p_cod_usuario: codUsuario
-                            }
-                    ).done(function (resultado) {
-                        var datosJSON = resultado;
-
-                        if (datosJSON.estado === 200) {
-                            swal("Exito", datosJSON.mensaje, "success");
-                            $("#btncerrar").click(); //Cerrar la ventana 
-                            listar(); //actualizar la lista
-                        } else {
-                            swal("Mensaje del sistema", resultado, "warning");
-                        }
-
-                    }).fail(function (error) {
-                        var datosJSON = $.parseJSON(error.responseText);
-                        swal("Error", datosJSON.mensaje, "error");
-                    });
-
+        if (isConfirm){ //el usuario hizo clic en el boton SI     
+            //procedo a grabar
+            //Llamar al controlador para grabar los datos
+            
+            //var codLab = ($("#txtTipoOperacion").val()==="agregar")? 
+            
+            var codEst="";
+            if ( $("#txtTipoOperacion").val()==="agregar" ){
+                codEst = "0";
+            }else{
+                codEst = $("#txtCodigo").val();
+            }
+            
+            $.post(
+                "../../controller/contacto.mensaje.agregar.editar.controller.php",
+                {
+                    p_doc_identidad: $("#txtDoc").val(),
+                    p_nombre: $("#txtNombre").val(),
+                    p_apellido_pat: $("#txtApPaterno").val(),
+                    p_apellido_mat: $("#txtApMaterno").val(),
+                    p_email: $("#txtEmail").val(),
+                    p_telefono: $("#txtTelefono").val(),
+                    p_mensaje: $("#txtMensaje").val(),
+                    p_tipo_ope: $("#txtTipoOperacion").val(),
+                    p_codigo_cliente: codEst 
                 }
-            });
+              ).done(function(resultado){                    
+                  var datosJSON = resultado;
 
+                  if (datosJSON.estado===200){
+                      swal("Exito", datosJSON.mensaje, "success");
+                      $("#btncerrar").click(); //Cerrar la ventana 
+                      listar(); //actualizar la lista
+                  }else{
+                      swal("Mensaje del sistema", resultado , "warning");
+                  }
+
+              }).fail(function(error){
+                    var datosJSON = $.parseJSON( error.responseText );
+                    swal("Error", datosJSON.mensaje , "error");
+              }) ;
+            
+        }
+    });
+    
 });
 
 

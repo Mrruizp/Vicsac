@@ -1,7 +1,5 @@
 <?php
-
 require_once '../data/Conexion.class.php';
-
 class ContactoMensaje extends Conexion {
     private $codigo;
     private $doc_identidad;
@@ -15,67 +13,51 @@ class ContactoMensaje extends Conexion {
     public function getCodigo() {
         return $this->codigo;
     }
-
     public function getDoc_identidad() {
         return $this->doc_identidad;
     }
-
     public function getNombre() {
         return $this->nombre;
     }
-
     public function getApPaterno() {
         return $this->apPaterno;
     }
-
     public function getApMaterno() {
         return $this->apMaterno;
     }
-
     public function getEmail() {
         return $this->email;
     }
-
     public function getTelefono() {
         return $this->Telefono;
     }
-
     public function getMensaje() {
         return $this->mensaje;
     }
-
     public function setCodigo($codigo) {
         $this->codigo = $codigo;
     }
-
     public function setDoc_identidad($doc_identidad) {
         $this->doc_identidad = $doc_identidad;
     }
-
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
-
     public function setApPaterno($apPaterno) {
         $this->apPaterno = $apPaterno;
     }
-
     public function setApMaterno($apMaterno) {
         $this->apMaterno = $apMaterno;
     }
-
     public function setEmail($email) {
         $this->email = $email;
     }
-
     public function setTelefono($Telefono) {
         $this->Telefono = $Telefono;
     }
-
     public function setMensaje($mensaje) {
         $this->mensaje = $mensaje;
     }
-
         
     public function listar() {
         try {
@@ -90,36 +72,63 @@ class ContactoMensaje extends Conexion {
     }
     
     public function agregar() {
-        $this->dbLink->beginTransaction();
+        $this->dblink->beginTransaction();
         
         try {
-            $sql = "select * from f_generar_correlativo('menu') as correlativo";
-            $sentencia = $this->dbLink->prepare($sql);
+            $sql = "select * from f_generar_correlativo('cliente') as correlativo";
+            $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             if ($sentencia->rowCount()){
                 $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-                $this->setCodigoMenu($resultado["correlativo"]);
+                $nuevoCodigo = $resultado["correlativo"];
+                $this->setCodigo($nuevoCodigo);
                 
-                $sql = "insert into menu (codigo_menu, nombre, estado) values (:p_codigo_menu, :p_nombre, :p_estado)";
-                $sentencia = $this->dbLink->prepare($sql);
-                $sentencia->bindParam(":p_codigo_menu", $this->getCodigoMenu());
+                $sql = "insert into cliente (
+                                codigo_id, 
+                                doc_identidad,
+                                nombre,
+                                apellido_pat,
+                                apellido_mat,
+                                email,
+                                telefono,
+                                mensaje
+                                )
+                    values (
+                                :p_codigo_cliente,
+                                :p_doc_identidad,
+                                :p_nombre,
+                                :p_apellido_pat,
+                                :p_apellido_mat,
+                                :p_email,
+                                :p_telefono,
+                                :p_mensaje
+                                );
+                    ";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_codigo_cliente", $this->getCodigo());
+                $sentencia->bindParam(":p_doc_identidad", $this->getDoc_identidad());
                 $sentencia->bindParam(":p_nombre", $this->getNombre());
-                $sentencia->bindParam(":p_estado", $this->getCodigoEstado());
+                $sentencia->bindParam(":p_apellido_pat", $this->getApPaterno());
+                $sentencia->bindParam(":p_apellido_mat", $this->getApMaterno());
+                $sentencia->bindParam(":p_email", $this->getEmail());
+                $sentencia->bindParam(":p_telefono", $this->getTelefono());
+                $sentencia->bindParam(":p_mensaje", $this->getMensaje());
+                
                 $sentencia->execute();
                 
-                $sql = "update correlativo set numero = numero + 1 where tabla='menu'";
-                $sentencia = $this->dbLink->prepare($sql);
+                $sql = "update correlativo set numero = numero + 1 where tabla='cliente'";
+                $sentencia = $this->dblink->prepare($sql);
                 $sentencia->execute();
                 
-                $this->dbLink->commit();
+                $this->dblink->commit();
                 
                 return true;
                 
             }else{
-                throw new Exception("No se encontró el correlativo para la tabla menú");
+                throw new Exception("No se encontró el correlativo para la tabla cliente");
             }
         } catch (Exception $exc) {
-            $this->dbLink->rollBack();
+            $this->dblink->rollBack();
             throw $exc;
         }
     }

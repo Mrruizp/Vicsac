@@ -1,7 +1,7 @@
 <?php
 
 class Helper {
-    public static $DIRECTORIO_PRINCIPAL = "vicsac_web";
+    public static $DIRECTORIO_PRINCIPAL = "vicsac";
         
     public static function generarHTMLReporte($htmlDatos) {
         $html = '

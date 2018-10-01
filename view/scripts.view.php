@@ -68,12 +68,13 @@
 <!-- Script to Activate the Carousel -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<!--
 <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
 </script>
+-->
 <script language="JavaScript">
     function ValidaSoloNumeros() {/* no permite el ingreso de carÃ¡cteres que no sean numeros*/
         if ((event.keyCode < 48) || (event.keyCode/* cÃ³digo de la tecla fÃ­sica*/ > 57)) /* del 48 al 56 corresponde solo numeros*/
@@ -89,11 +90,4 @@
      });
      });*/
 </script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#btnLimpiar').click(function () {
-            $('input[type="text"]').val('');
-            $('textarea').val('');
-        });
-    });
-</script>
+

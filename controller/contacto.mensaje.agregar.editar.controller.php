@@ -1,14 +1,12 @@
 <?php
-
 require_once '../logic/ContactoMensaje.class.php';
 require_once '../util/funciones/Funciones.class.php';
-
 try {
     $objContactoMensaje = new ContactoMensaje();
     
-    $objContactoMensaje->setDoc_identidad($_POST["p_doc_ident"]);
-    $objContactoMensaje->setNombre($_POST["p_nombres"]);
-    $objContactoMensaje->setApPaterno($_POST["p_apPaterno"]);
+    $objContactoMensaje->setDoc_identidad($_POST["txtDoc"]);
+    $objContactoMensaje->setNombre($_POST["txtNombre"]);
+    $objContactoMensaje->setApPaterno($_POST["txtApPaterno"]);
     $objContactoMensaje->setApMaterno($_POST["txtApMaterno"]);
     $objContactoMensaje->setEmail($_POST["txtEmail"]);
     $objContactoMensaje->setTelefono($_POST["txtTelefono"]);
