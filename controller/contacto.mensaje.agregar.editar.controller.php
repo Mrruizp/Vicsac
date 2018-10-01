@@ -13,7 +13,7 @@ try {
     $objContactoMensaje->setMensaje($_POST["txtMensaje"]);
     
     if ($objContactoMensaje->agregar() == true){
-        Funciones::mensaje("Mensaje agregado correctamente", "s", "../view/index.php", 40);
+        Funciones::mensaje("Mensaje envíado correctamente", "s", "../view/index.php", 5);
     }
 } catch (Exception $exc) {
     Funciones::mensaje($exc->getMessage(), "e");

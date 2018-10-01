@@ -28,7 +28,7 @@
                             <div class="logo smooth-scroll">
 
                                 <a href="#banner">
-                                    <img id="logo" class="img-responsive" src="../util/oxygen/images/logo_1.jpg" alt="Vicsac">
+                                    <img id="logo" class="img-responsive" src="../util/oxygen/images/logoCentrado.jpg" alt="Vicsac">
                                 </a>
                             </div>
 

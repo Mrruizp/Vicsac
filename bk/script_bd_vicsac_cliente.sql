@@ -21,6 +21,7 @@ CREATE TABLE CLIENTE
  telefono varchar(15)not null,
  mensaje varchar(500)not null
 );
+alter table CLIENTE alter column doc_identidad type varchar(11);
 -- Function: f_generar_correlativo(character varying)
 
 -- DROP FUNCTION f_generar_correlativo(character varying);

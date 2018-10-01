@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp_1/htdocs/vicsac_web/util/oxygen/css/style.css</file>
-            <file>file:/C:/xampp_1/htdocs/vicsac_web/util/oxygen/bootstrap.min.css</file>
-            <file>file:/C:/xampp_1/htdocs/vicsac_web/util/oxygen/style.css</file>
-            <file>file:/C:/xampp_1/htdocs/vicsac_web/view/index.php</file>
+            <file>file:/C:/xampp_1/htdocs/Vicsac/logic/ContactoMensaje.class.php</file>
+            <file>file:/C:/xampp_1/htdocs/Vicsac/data/configuracion.php</file>
+            <file>file:/C:/xampp_1/htdocs/Vicsac/view/index.php</file>
+            <file>file:/C:/xampp_1/htdocs/Vicsac/controller/contacto.mensaje.agregar.editar.controller.php</file>
         </group>
     </open-files>
 </project-private>
